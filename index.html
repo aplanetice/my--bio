@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f7f7f5">
+<title>Work — Buenos Aires / Paris / Barcelona</title>
+<style>
+:root{--paper:#f7f7f5;--ink:#151515;--muted:#777;--line:#d8d8d4;--soft:#ecece8}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;letter-spacing:-.025em}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.wrap{width:min(1160px,calc(100% - 48px));margin:auto}
+.top{display:flex;justify-content:space-between;align-items:center;padding:26px 0;border-bottom:1px solid var(--line);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.top .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#151515;margin-right:8px}
+.hero{padding:clamp(65px,11vw,140px) 0 58px}
+.eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+h1{font-size:clamp(56px,11vw,142px);line-height:.86;letter-spacing:-.095em;font-weight:500;margin:24px 0 32px;max-width:950px}
+.hero-bottom{display:flex;justify-content:space-between;align-items:end;gap:30px}
+.intro{font-size:clamp(17px,2vw,23px);line-height:1.35;max-width:470px;letter-spacing:-.04em}
+.route{font-size:12px;letter-spacing:.04em;white-space:nowrap;color:var(--muted)}
+.tabs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:40px 0 0}
+.tab{display:flex;align-items:center;justify-content:space-between;padding:22px 24px;border:1px solid var(--ink);background:transparent;cursor:pointer;text-align:left;transition:background .2s,color .2s,transform .2s;min-height:76px}
+.tab:hover{transform:translateY(-3px)}
+.tab.active{background:var(--ink);color:var(--paper)}
+.tab .num{font-size:11px;opacity:.6;margin-right:16px}
+.tab .label{font-size:clamp(20px,3vw,32px);letter-spacing:-.06em}
+.tab .arrow{font-size:22px}
+.section{padding:56px 0 100px;animation:appear .35s ease}
+@keyframes appear{from{opacity:.25;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.section-head{display:flex;justify-content:space-between;gap:30px;align-items:start;border-top:1px solid var(--line);padding-top:20px;margin-bottom:42px}
+.section-head h2{font-size:clamp(36px,6vw,72px);line-height:.95;letter-spacing:-.08em;font-weight:500;margin:0;max-width:680px}
+.section-head p{max-width:300px;color:#5f5f5b;line-height:1.5;font-size:14px;margin:4px 0 0}
+.work-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:12px}
+.card{border:1px solid var(--line);padding:22px;min-height:210px;display:flex;flex-direction:column;justify-content:space-between;transition:border-color .2s,transform .2s}
+.card:hover{border-color:var(--ink);transform:translateY(-2px)}
+.card.dark{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.card .kicker{font-size:10px;letter-spacing:.12em;text-transform:uppercase;opacity:.65}
+.card h3{font-size:clamp(24px,3vw,38px);line-height:.98;letter-spacing:-.07em;font-weight:500;margin:32px 0 12px}
+.card p{font-size:14px;line-height:1.5;max-width:330px;margin:0;color:inherit;opacity:.76;letter-spacing:-.02em}
+.wide{grid-column:span 7}.narrow{grid-column:span 5}.half{grid-column:span 6}
+.numbers{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);margin-top:12px}
+.metric{padding:25px 22px;border-right:1px solid var(--line)}
+.metric:last-child{border:0}
+.metric strong{display:block;font-size:clamp(32px,5vw,56px);font-weight:500;letter-spacing:-.08em;line-height:1}
+.metric span{display:block;font-size:12px;line-height:1.4;color:var(--muted);margin-top:12px;max-width:150px}
+.timeline{border-top:1px solid var(--line);margin-top:62px}
+.timeline-row{display:grid;grid-template-columns:150px 1fr 2fr;gap:20px;padding:22px 0;border-bottom:1px solid var(--line);align-items:start}
+.timeline .date{font-size:11px;letter-spacing:.06em;color:var(--muted);text-transform:uppercase;padding-top:4px}
+.timeline h3{font-size:21px;letter-spacing:-.05em;font-weight:500;margin:0}
+.timeline .place{font-size:12px;color:var(--muted);margin-top:6px}
+.timeline p{font-size:14px;line-height:1.5;margin:0;max-width:510px}
+.tools{margin-top:64px}
+.tools-title{display:flex;justify-content:space-between;align-items:baseline;gap:20px;border-bottom:1px solid var(--line);padding-bottom:16px}
+.tools-title h3{font-size:28px;letter-spacing:-.06em;font-weight:500;margin:0}
+.tools-title span{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
+.tool-group{display:grid;grid-template-columns:180px 1fr;gap:24px;padding:20px 0;border-bottom:1px solid var(--line)}
+.tool-group h4{font-size:12px;text-transform:uppercase;letter-spacing:.08em;font-weight:500;margin:4px 0}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pill{border:1px solid #c9c9c4;padding:9px 12px;border-radius:999px;font-size:12px;letter-spacing:-.01em}
+.note{font-size:12px;color:var(--muted);line-height:1.5;margin-top:15px}
+footer{border-top:1px solid var(--line);padding:24px 0 36px;display:flex;justify-content:space-between;gap:20px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.hidden{display:none!important}
+@media(max-width:700px){.wrap{width:calc(100% - 32px)}.hero-bottom{display:block}.route{margin-top:24px}.tabs{gap:8px}.tab{padding:17px 14px;min-height:66px}.section{padding:42px 0 70px}.section-head{display:block}.section-head p{margin-top:18px}.wide,.narrow,.half{grid-column:span 12}.card{min-height:180px}.numbers{grid-template-columns:1fr}.metric{border-right:0;border-bottom:1px solid var(--line)}.metric:last-child{border-bottom:0}.timeline-row{grid-template-columns:1fr;gap:8px}.tool-group{grid-template-columns:1fr;gap:12px}footer{flex-direction:column}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div><span class="dot"></span>Field notes / Work</div>
+    <div>Barcelona · Open to what’s next</div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow">A little context, a lot of moving parts</div>
+      <h1>Work is<br>never just<br>one thing.</h1>
+      <div class="hero-bottom">
+        <div class="intro">Sales, people, operations, technology, decisions and the small details that somehow become the big picture.</div>
+        <div class="route">BUENOS AIRES → PARIS → BARCELONA</div>
+      </div>
+      <nav class="tabs" aria-label="Choose a section">
+        <button class="tab" data-tab="motivation"><span><span class="num">01 /</span><span class="label">Motivation</span></span><span class="arrow">↗</span></button>
+        <button class="tab active" data-tab="work"><span><span class="num">02 /</span><span class="label">Work</span></span><span class="arrow">↘</span></button>
+      </nav>
+    </section>
+
+    <section id="motivation" class="section hidden">
+      <div class="section-head">
+        <h2>What keeps<br>me curious.</h2>
+        <p>Growth isn’t only about the next role. It’s about learning how things work, meeting people who see things differently and taking on something that feels a little unfamiliar.</p>
+      </div>
+      <div class="work-grid">
+        <article class="card wide"><div class="kicker">01 / Perspective</div><div><h3>Different places.<br>Different ways to see things.</h3><p>Buenos Aires, Paris and Barcelona have each brought new people, working styles and perspectives into my life. Moving between them taught me to adapt without losing my curiosity.</p></div></article>
+        <article class="card dark narrow"><div class="kicker">02 / Growth</div><div><h3>Always room<br>to figure out more.</h3><p>New tools, new subjects, new challenges. Learning is part of the work, not something that happens only outside it.</p></div></article>
+        <article class="card narrow"><div class="kicker">03 / People</div><div><h3>Good work is<br>rarely solo work.</h3><p>Different strengths and honest conversations often lead to better ideas — and make the journey more interesting.</p></div></article>
+        <article class="card wide"><div class="kicker">04 / Resilience</div><div><h3>Change happens.<br>Keep your footing.</h3><p>Starting over in new places and stepping into unfamiliar situations have taught me to stay resourceful, make decisions with the information available and keep moving when plans change.</p></div></article>
+      </div>
+    </section>
+
+    <section id="work" class="section">
+      <div class="section-head">
+        <h2>A bit of<br>everything.</h2>
+        <p>Different roles, different industries, one recurring theme: connecting the people, details and decisions that help things move forward.</p>
+      </div>
+      <div class="work-grid">
+        <article class="card dark wide"><div class="kicker">01 / Commercial</div><div><h3>From first conversation<br>to long-term relationship.</h3><p>B2B and B2C sales, prospecting, discovery, demos, negotiation, closing, account growth, renewals and partnerships. The job is as much about understanding people as it is about the numbers.</p></div></article>
+        <article class="card narrow"><div class="kicker">02 / Operations</div><div><h3>The moving parts.</h3><p>Daily operations, onboarding, incidents, events, budgets, logistics, coordination and process improvements — often all in the same day.</p></div></article>
+        <article class="card narrow"><div class="kicker">03 / Decisions</div><div><h3>People + data<br>+ a bit of judgment.</h3><p>Client needs, CRM pipelines, KPIs, conversion, churn risks and commercial opportunities. Knowing what to look at matters; knowing what to do with it matters more.</p></div></article>
+        <article class="card wide"><div class="kicker">04 / The unexpected</div><div><h3>Plans change.<br>The work still needs doing.</h3><p>Last-minute changes, tricky client situations and competing priorities have been part of the picture — from running day-to-day operations to coordinating international events. Staying calm, reordering priorities and finding a workable solution is part of the job.</p></div></article>
+      </div>
+
+      <div class="numbers" aria-label="Selected experience">
+        <div class="metric"><strong>+40%</strong><span>SQL closing rate in B2B sales</span></div>
+        <div class="metric"><strong>50+</strong><span>Corporate accounts managed</span></div>
+        <div class="metric"><strong>4 cities</strong><span>Fashion Week projects: Paris, London, New York and Milan</span></div>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-row">
+          <div class="date">2026 · Barcelona</div>
+          <div><h3>Account Management & Partnerships</h3><div class="place">Konga Music Agency</div></div>
+          <p>Built partnership workflows, improved lead qualification in Notion CRM, delivered tailored SaaS demos and worked across client needs, conversion and churn risks.</p>
+        </div>
+        <div class="timeline-row">
+          <div class="date">2024–2026 · Barcelona</div>
+          <div><h3>Sales & Operations</h3><div class="place">IWG / Spaces</div></div>
+          <p>Owned the B2B sales cycle, managed corporate accounts and renewals, handled daily operations and client issues, and kept an eye on performance and retention.</p>
+        </div>
+        <div class="timeline-row">
+          <div class="date">2022–2023 · Paris</div>
+          <div><h3>Executive & Event Coordination</h3><div class="place">Lucien Pagès Communication</div></div>
+          <p>Coordinated Fashion Week projects across four cities, managed budgets and logistics, supported international events and improved operational processes.</p>
+        </div>
+        <div class="timeline-row">
+          <div class="date">2018–2022 · Paris</div>
+          <div><h3>B2B & B2C Technology Sales</h3><div class="place">Apple</div></div>
+          <p>Managed business relationships, delivered tailored hardware and SaaS solutions, supported customers and worked on sales performance, retention and account growth.</p>
+        </div>
+      </div>
+
+      <div class="tools">
+        <div class="tools-title"><h3>The digital toolbox</h3><span>Tools I’ve worked with</span></div>
+        <div class="tool-group"><h4>CRM & sales</h4><div class="pills"><span class="pill">Salesforce</span><span class="pill">HubSpot</span><span class="pill">Notion CRM</span><span class="pill">Internal CRM systems</span></div></div>
+        <div class="tool-group"><h4>Planning & workflow</h4><div class="pills"><span class="pill">monday.com</span><span class="pill">Notion</span><span class="pill">Internal ERP systems</span></div></div>
+        <div class="tool-group"><h4>Communication</h4><div class="pills"><span class="pill">Microsoft Teams</span><span class="pill">Slack</span><span class="pill">Google Workspace</span></div></div>
+        <div class="tool-group"><h4>Data & marketing</h4><div class="pills"><span class="pill">Excel</span><span class="pill">Google Ads</span><span class="pill">YouTube / Search</span><span class="pill">CRM reporting</span></div></div>
+        <p class="note">A practical toolkit, not a collection of logos. The tools change; the point is to keep information clear, people aligned and work moving.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer><span>Buenos Aires → Paris → Barcelona</span><span>Work, with the details included.</span></footer>
+</div>
+<script>
+const buttons=[...document.querySelectorAll('[data-tab]')];
+const sections=[...document.querySelectorAll('.section')];
+function showTab(name){
+  sections.forEach(s=>s.classList.toggle('hidden',s.id!==name));
+  buttons.forEach(b=>{
+    const active=b.dataset.tab===name;
+    b.classList.toggle('active',active);
+    b.setAttribute('aria-pressed',String(active));
+  });
+  history.replaceState(null,'','#'+name);
+}
+buttons.forEach(b=>b.addEventListener('click',()=>showTab(b.dataset.tab)));
+const initial=location.hash.replace('#','');
+if(initial==='motivation'||initial==='work')showTab(initial);else showTab('work');
+</script>
+</body>
+</html>
